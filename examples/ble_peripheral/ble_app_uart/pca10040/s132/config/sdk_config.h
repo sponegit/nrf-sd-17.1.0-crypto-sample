@@ -46,6 +46,54 @@
 #ifdef USE_APP_CONFIG
 #include "app_config.h"
 #endif
+// <h> nRF_Crypto 
+
+//==========================================================
+// <e> NRF_CRYPTO_ENABLED - nrf_crypto - Cryptography library.
+//==========================================================
+#ifndef NRF_CRYPTO_ENABLED
+#define NRF_CRYPTO_ENABLED 1
+#endif
+// <o> NRF_CRYPTO_ALLOCATOR  - Memory allocator
+ 
+
+// <i> Choose memory allocator used by nrf_crypto. Default is alloca if possible or nrf_malloc otherwise. If 'User macros' are selected, the user has to create 'nrf_crypto_allocator.h' file that contains NRF_CRYPTO_ALLOC, NRF_CRYPTO_FREE, and NRF_CRYPTO_ALLOC_ON_STACK.
+// <0=> Default 
+// <1=> User macros 
+// <2=> On stack (alloca) 
+// <3=> C dynamic memory (malloc) 
+// <4=> SDK Memory Manager (nrf_malloc) 
+
+#ifndef NRF_CRYPTO_ALLOCATOR
+#define NRF_CRYPTO_ALLOCATOR 3
+#endif
+
+
+// <e> NRF_CRYPTO_BACKEND_MBEDTLS_ENABLED - Enable the mbed TLS backend.
+//==========================================================
+#ifndef NRF_CRYPTO_BACKEND_MBEDTLS_ENABLED
+#define NRF_CRYPTO_BACKEND_MBEDTLS_ENABLED 1
+#endif
+// <q> NRF_CRYPTO_BACKEND_MBEDTLS_AES_CCM_ENABLED  - Enable the AES CCM mode using mbed TLS.
+ 
+
+#ifndef NRF_CRYPTO_BACKEND_MBEDTLS_AES_CCM_ENABLED
+#define NRF_CRYPTO_BACKEND_MBEDTLS_AES_CCM_ENABLED 1
+#endif
+
+// <q> NRF_CRYPTO_BACKEND_MBEDTLS_AES_GCM_ENABLED  - Enable the AES GCM mode using mbed TLS.
+ 
+
+#ifndef NRF_CRYPTO_BACKEND_MBEDTLS_AES_GCM_ENABLED
+#define NRF_CRYPTO_BACKEND_MBEDTLS_AES_GCM_ENABLED 1
+#endif
+
+// </e>
+
+// </e>
+
+// </e>
+
 // <h> Board Support 
 
 //==========================================================
